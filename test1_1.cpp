@@ -10,7 +10,6 @@ bool f(int x){
   return true;
 }
 
-
 int main()
 {
   // 请在此输入您的代码
@@ -29,7 +28,6 @@ int main()
             {
               cout<<d;
             }
-
           }
       }   
     }   
