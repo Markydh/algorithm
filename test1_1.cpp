@@ -2,7 +2,7 @@
 #include <math.h>
 using namespace std;
 
-//判断是否是素数
+//判断是否为素数
 bool f(int x){
   for(int i=2;i<sqrt(x);i++){
     if(x%i==0)return false;
