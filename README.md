@@ -1,5 +1,4 @@
 # Hadoop
 # algorithm
-# algorithm
-# algorithm
-# algorithm
+# 等差素数列
+
