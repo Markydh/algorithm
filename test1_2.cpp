@@ -4,7 +4,7 @@ int main(){
 long long n;//n个数字
  cin>>n;
  int a[n+1];
- long long  ans=0;//结果
+ long long  ans=0;//answer
  a[0]=0;
  long long sum=0;
  for(int i=1;i<n+1;i++){
