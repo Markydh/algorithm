@@ -16,7 +16,6 @@ int main(){
     for(int j=0;j<n;j++){
         b[j][m-i-1]=a[i][j];
     }
-
     cout<<n<<" "<<m<<endl;//输出新矩阵的
     //将原来的数组第i行变成第m-i列
     for(int i=0;i<n;i++)
