@@ -1,79 +1,44 @@
-#include <iostream>
+#include<iostream>
+#include<iomanip>
 using namespace std;
-int main()
-{
-  // 请在此输入您的代码
-  char arr[30][51]={"VLPWJVVNNZSWFGHSFRBCOIJTPYNEURPIGKQGPSXUGNELGRVZAG",\
-"SDLLOVGRTWEYZKKXNKIRWGZWXWRHKXFASATDWZAPZRNHTNNGQF",\
-"ZGUGXVQDQAEAHOQEADMWWXFBXECKAVIGPTKTTQFWSWPKRPSMGA",\
-"BDGMGYHAOPPRRHKYZCMFZEDELCALTBSWNTAODXYVHQNDASUFRL",\
-"YVYWQZUTEPFSFXLTZBMBQETXGXFUEBHGMJKBPNIHMYOELYZIKH",\
-"ZYZHSLTCGNANNXTUJGBYKUOJMGOGRDPKEUGVHNZJZHDUNRERBU",\
-"XFPTZKTPVQPJEMBHNTUBSMIYEGXNWQSBZMHMDRZZMJPZQTCWLR",\
-"ZNXOKBITTPSHEXWHZXFLWEMPZTBVNKNYSHCIQRIKQHFRAYWOPG",\
-"MHJKFYYBQSDPOVJICWWGGCOZSBGLSOXOFDAADZYEOBKDDTMQPA",\
-"VIDPIGELBYMEVQLASLQRUKMXSEWGHRSFVXOMHSJWWXHIBCGVIF",\
-"GWRFRFLHAMYWYZOIQODBIHHRIIMWJWJGYPFAHZZWJKRGOISUJC",\
-"EKQKKPNEYCBWOQHTYFHHQZRLFNDOVXTWASSQWXKBIVTKTUIASK",\
-"PEKNJFIVBKOZUEPPHIWLUBFUDWPIDRJKAZVJKPBRHCRMGNMFWW",\
-"CGZAXHXPDELTACGUWBXWNNZNDQYYCIQRJCULIEBQBLLMJEUSZP",\
-"RWHHQMBIJWTQPUFNAESPZHAQARNIDUCRYQAZMNVRVZUJOZUDGS",\
-"PFGAYBDEECHUXFUZIKAXYDFWJNSAOPJYWUIEJSCORRBVQHCHMR",\
-"JNVIPVEMQSHCCAXMWEFSYIGFPIXNIDXOTXTNBCHSHUZGKXFECL",\
-"YZBAIIOTWLREPZISBGJLQDALKZUKEQMKLDIPXJEPENEIPWFDLP",\
-"HBQKWJFLSEXVILKYPNSWUZLDCRTAYUUPEITQJEITZRQMMAQNLN",\
-"DQDJGOWMBFKAIGWEAJOISPFPLULIWVVALLIIHBGEZLGRHRCKGF",\
-"LXYPCVPNUKSWCCGXEYTEBAWRLWDWNHHNNNWQNIIBUCGUJYMRYW",\
-"CZDKISKUSBPFHVGSAVJBDMNPSDKFRXVVPLVAQUGVUJEXSZFGFQ",\
-"IYIJGISUANRAXTGQLAVFMQTICKQAHLEBGHAVOVVPEXIMLFWIYI",\
-"ZIIFSOPCMAWCBPKWZBUQPQLGSNIBFADUUJJHPAIUVVNWNWKDZB",\
-"HGTEEIISFGIUEUOWXVTPJDVACYQYFQUCXOXOSSMXLZDQESHXKP",\
-"FEBZHJAGIFGXSMRDKGONGELOALLSYDVILRWAPXXBPOOSWZNEAS",\
-"VJGMAOFLGYIFLJTEKDNIWHJAABCASFMAKIENSYIZZSLRSUIPCJ",\
-"BMQGMPDRCPGWKTPLOTAINXZAAJWCPUJHPOUYWNWHZAKCDMZDSR",\
-"RRARTVHZYYCEDXJQNQAINQVDJCZCZLCQWQQIKUYMYMOVMNCBVY",\
-"ABTCRRUXVGYLZILFLOFYVWFFBZNFWDZOADRDCLIRFKBFBHMAXX"};
-int sum=0;
-int k,m,n;
-for(int i=0;i<30;i++){
-  for(int j=0;j<50;j++){
-    k=j+1;
-    while(k<50){      //求同一行的大小关系
-      if(arr[i][j]<arr[i][k])
-         sum++;
-      k++;
-    }  
-    k=i+1;
-    while(k<30){      //求同一列的大小关系
-     if(arr[i][j]<arr[k][j])
-       sum++;
-      k++;
+
+int main(){
+    int m,n;
+    cin>>m>>n;//m行n列
+    int a[m][n];
+    int b[n][m];
+    cout.setf(ios::left);
+    for(int i=0;i<m;i++)
+    for(int j=0;j<n;j++)
+        cin>>a[i][j];
+    //给矩阵赋值
+    for(int i=0;i<m;i++)
+    for(int j=0;j<n;j++){
+        b[j][m-i-1]=a[i][j];
     }
-    m=i+1,n=j+1;
-    while(m<30&&n<50){
-      if(arr[i][j]<arr[m][n])
-         sum++;
-     m++;
-     n++;
-    }//左上到右下
-    
-    
-    m=i,n=j;
-    while(m<30&&n>=0){
-      if(arr[i][j]<arr[m][n])
-      sum++;
-      m++;
-      n--;
-    }//从右上到左下
-    m=i,n=j;
-    while(m>=0&&n<50){
-      if(arr[i][j]<arr[m][n])
-      sum++;
-      m--;
-      n++;
-    }//从左下到右上
-  }
-}
-cout<<sum;
-  return 0;
-}
+
+    cout<<n<<" "<<m<<endl;
+    for(int i=0;i<n;i++)
+    {
+    for(int j=0;j<m;j++)
+    {
+        if(j==m-1)
+        cout<<b[i][j];
+        else cout<<b[i][j]<<" ";
+    }
+    if(i==n-1);
+    else
+    cout<<endl;
+    }
+    }
+
+/*
+输出的第一行为两个正整数m和n，为输出的新矩阵的行数和列数
+
+剩下的输出为新矩阵的内容，共m行，每行n个整数
+
+数据之间用空格分隔
+
+每行数据的最后无空格
+
+最后的一行输出后面无换行符*/
