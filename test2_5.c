@@ -41,7 +41,3 @@ for(int k=max;k>0;k--){
     printf("\n");
 }
 }
-/*
-max=count[0];
-for(int k=0;k<26;k++)if(count[k]>max)max=count[k];
-*/
