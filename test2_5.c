@@ -16,14 +16,13 @@ while ((ch = getchar()) != EOF)
 s[i]='\0';
 for(int j=0;j<strlen(s)-1;j++){
     if(s[j]>='a'&&s[j]<='z')count[(s[j]-'a')]++;
-}
+}//求每个字符出现的频度
 max=count[0];
 for(int k=0;k<26;k++)
 {
     if(count[k]>max)max=count[k];
     if(count[k]!=0)num++;
-}
-
+}//求出现最多次的出现次数以及num个出现过的字符个数
 for(int j=0;j<25;j++)
 for(int k=0;k<25-j;k++)
 if(count[k]>count[k+1]){
