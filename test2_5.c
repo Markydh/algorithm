@@ -2,7 +2,6 @@
 #include<string.h>
 
 int count[26];//记录26个英文字母每个出现的次数
-
 int main()
 {
 char s[200];
